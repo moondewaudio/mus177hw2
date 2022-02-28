@@ -37,10 +37,11 @@ offset adds a positive or negative DC offset before the wavefolding
 is done.;
 #X text 476 323 the last module is a delay with mild compression in
 the feedback. the time ranges between 1ms and 15 seconds (15000). the
-feedback ranges between 0 and 100 and controls the number of repeats
-that are heard. lastly \, the mix controls the wet/dry mix of the delay
-\, between 0 and 100 at 0 \, the signal is fully dry \, and at 100
-none of the dry signal is heard.;
+feedback ranges between 0 and 120 and controls the number of repeats
+that are heard. at values above 100 \, there is some distortion added.
+lastly \, the mix controls the wet/dry mix of the delay \, between
+0 and 100 at 0 \, the signal is fully dry \, and at 100 none of the
+dry signal is heard.;
 #X connect 0 0 9 0;
 #X connect 0 0 9 1;
 #X connect 1 0 0 0;
