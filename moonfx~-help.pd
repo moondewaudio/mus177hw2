@@ -1,0 +1,57 @@
+#N canvas 554 176 980 615 12;
+#X obj 167 176 moonfx~, f 27;
+#X obj 53 136 osc~, f 7;
+#X floatatom 41 101 5 0 0 0 - - - 0;
+#X floatatom 168 120 5 0 0 0 - - - 0;
+#X floatatom 220 121 5 0 0 0 - - - 0;
+#X floatatom 319 125 9 0 0 0 - - - 0;
+#X floatatom 404 121 5 0 0 0 - - - 0;
+#X floatatom 459 120 5 0 0 0 - - - 0;
+#X floatatom 523 122 5 0 0 0 - - - 0;
+#X obj 168 256 output~;
+#X text 170 99 gain;
+#X text 214 100 offset;
+#X text 319 15 LPF;
+#X text 312 43 cutoff;
+#X text 433 13 delay;
+#X text 386 98 time (ms);
+#X text 458 99 feedback;
+#X text 528 101 mix;
+#X text 167 15 wavefolder;
+#X text 14 10 input signal;
+#X obj 319 93 mtof;
+#X floatatom 319 67 5 0 0 0 - - - 0;
+#X obj 41 74 mtof;
+#X floatatom 39 45 5 0 0 0 - - - 0;
+#X text 24 330 this is a multifx module. the signal path goes from
+a wavefolder into a first order low pass filter to finally a delay
+with mild compression. the input signal is on the leftmost input.,
+f 60;
+#X text 24 479 the second module is a first order low pass filter based
+off an all pass filter design. the filter cutoff ranges between 0 -
+20kHz.;
+#X text 25 396 the wavefolder sets the desired gain on the signal \,
+from 0 and infinity. at 0 gain \, the signal is silent. as the gain
+is increased \, the amount of wavefolding done increases as well. the
+offset adds a positive or negative DC offset before the wavefolding
+is done.;
+#X text 476 323 the last module is a delay with mild compression in
+the feedback. the time ranges between 1ms and 15 seconds (15000). the
+feedback ranges between 0 and 100 and controls the number of repeats
+that are heard. lastly \, the mix controls the wet/dry mix of the delay
+\, between 0 and 100 at 0 \, the signal is fully dry \, and at 100
+none of the dry signal is heard.;
+#X connect 0 0 9 0;
+#X connect 0 0 9 1;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 1;
+#X connect 4 0 0 2;
+#X connect 5 0 0 3;
+#X connect 6 0 0 4;
+#X connect 7 0 0 5;
+#X connect 8 0 0 6;
+#X connect 20 0 5 0;
+#X connect 21 0 20 0;
+#X connect 22 0 2 0;
+#X connect 23 0 22 0;

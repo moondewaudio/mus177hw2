@@ -1,0 +1,7 @@
+; moonfx~.def : declares the module parameters for the dll
+
+LIBRARY
+"moonfx~"
+
+EXPORTS
+moonfx_tilde_setup
